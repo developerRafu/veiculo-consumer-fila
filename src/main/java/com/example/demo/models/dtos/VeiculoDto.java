@@ -18,4 +18,5 @@ public class VeiculoDto {
     private Integer ano;
 
     private Long donoId;
+    private String donoName;
 }

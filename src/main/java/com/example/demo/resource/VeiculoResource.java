@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("Veiculos")
+@RequestMapping("veiculos")
 public class VeiculoResource {
 
     @Autowired
@@ -36,8 +36,8 @@ public class VeiculoResource {
     @GetMapping("/{id}")
     public ResponseEntity<VeiculoDto> getById(@PathVariable Long id){
         return service.findById(id)
-                .map(Veiculo -> {
-                    VeiculoDto dto = this.convertToDto(Veiculo);
+                .map(veiculo -> {
+                    VeiculoDto dto = this.convertToDto(veiculo);
                     return ResponseEntity.ok(dto);
                 })
                 .orElseThrow(()->new RuntimeException("Objeto não encontrado"));
@@ -45,18 +45,18 @@ public class VeiculoResource {
 
     @PostMapping
     public ResponseEntity<VeiculoDto> save(VeiculoDto dto){
-        Veiculo Veiculo = this.convertToEntity(dto);
-        Veiculo = this.service.save(Veiculo);
-        dto = this.convertToDto(Veiculo);
+        Veiculo veiculo = this.convertToEntity(dto);
+        veiculo = this.service.save(veiculo);
+        dto = this.convertToDto(veiculo);
         return ResponseEntity.ok(dto);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<VeiculoDto> update(@RequestBody  VeiculoDto dto, @PathVariable Long id){
         dto.setId(id);
-        Veiculo Veiculo = this.convertToEntity(dto);
-        Veiculo = this.service.update(Veiculo);
-        dto = this.convertToDto(Veiculo);
+        Veiculo veiculo = this.convertToEntity(dto);
+        veiculo = this.service.update(veiculo);
+        dto = this.convertToDto(veiculo);
         return ResponseEntity.ok(dto);
     }
 
