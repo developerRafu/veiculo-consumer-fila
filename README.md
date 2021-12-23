@@ -5,3 +5,14 @@
 ```
 mvn spring-boot:run -Pdev
 ```
+ # Endpoints
+ - host: localhost
+ - pota: 8080
+ - /veiculos
+ - /clientes
+ - GET, POST, PUT, DELETE
+ - /veiculos/{id}
+ - /clientes/{id}
+ 
+ 
+ 
