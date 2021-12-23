@@ -13,6 +13,6 @@ mvn spring-boot:run -Pdev
  - GET, POST, PUT, DELETE
  - /veiculos/{id}
  - /clientes/{id}
- 
+ - /veiculos para listar todos os veículos
  
  
